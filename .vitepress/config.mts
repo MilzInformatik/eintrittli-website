@@ -1,13 +1,20 @@
 import { defineConfig } from 'vitepress'
 
+// Base path is injected by the GitHub Pages workflow (actions/configure-pages).
+// Empty or unset means the site is served from the domain root (custom domain).
+const rawBase = process.env.VITEPRESS_BASE ?? ''
+const base = `/${rawBase.replace(/^\/+|\/+$/g, '')}/`.replace('//', '/')
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Eintrittli",
   description: "Einfaches Anlass-Registrierungssystem mit konfigurierbaren Formularen, QR-Codes und CSV-Export. Keine Bezahlungen, kein Login für Teilnehmer.",
   lang: 'de-CH',
+  base,
   appearance: false,
   head: [
-    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: `${base}favicon.ico` }],
+    ['meta', { name: 'theme-color', content: '#257DEC' }],
     ['meta', { property: 'og:title', content: 'Eintrittli - Anlass-Registrierung. Einfach gemacht.' }],
     ['meta', { property: 'og:description', content: 'Konfigurierbare Formulare, QR-Codes und Live-Übersicht - ohne Bezahlsystem, ohne Login für Teilnehmer.' }],
     ['meta', { property: 'og:type', content: 'website' }],
@@ -18,7 +25,9 @@ export default defineConfig({
     siteTitle: false,
 
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Funktionen', link: '/#funktionen' },
+      { text: 'So funktioniert es', link: '/#so-funktioniert-es' },
+      { text: 'Kontakt', link: '/#kontakt' },
       { text: 'Demo', link: 'https://demo.eintrittli.ch' }
     ],
 

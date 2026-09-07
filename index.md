@@ -1,21 +1,6 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
-hero:
-  name: "Eintrittli"
-  text: "Anlass-Registrierung. Einfach gemacht."
-  tagline: Konfigurierbare Formulare, QR-Codes und übersichtliches Dashboard. Ohne Bezahlsystem und ohne Login für Teilnehmer.
-  image:
-    src: /eintrittli_mockup.png
-    alt: Eintrittli App Mockup
-  actions:
-    - theme: brand
-      text: Demo ausprobieren
-      link: https://demo.eintrittli.ch
-    - theme: alt
-      text: Kontakt
-      link: /#kontakt
+title: Eintrittli – Anlass-Registrierung. Einfach gemacht.
 
 features:
   - icon: 📝
@@ -37,48 +22,3 @@ features:
     title: Selbst hosten
     details: Volle Kontrolle über deine Daten. Einfaches Deployment mit Docker, dann läuft auf deinem eigenen Server.
 ---
-
-<style>
-:root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(135deg, #0A55B5 0%, #74B1FF 100%);
-  --vp-home-hero-image-background-image: none;
-  --vp-home-hero-image-filter: none;
-
-  --vp-breakpoint-xs: 480px;
-  --vp-breakpoint-sm: 768px;
-  --vp-breakpoint-md: 1024px;
-  --vp-breakpoint-lg: 1280px;
-}
-
-.VPFeatures {
-  padding-top: 40px !important;
-}
-
-.VPHero .name {
-  font-family: 'Mona Sans Expanded', var(--vp-font-family-base) !important;
-}
-
-.VPHero .image-container {
-  transform: none;
-}
-
-.VPHero .image {
-  /* padding: 2rem; */
-}
-
-.VPHero .image-container .image-bg {
-  display: none;
-}
-
-.VPHero .VPImage {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (max-width: 959px) {
-  .VPHero .image-container {
-    max-width: 100%; 
-  }
-}
-</style>
