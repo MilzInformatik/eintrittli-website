@@ -7,7 +7,7 @@ import { withBase } from 'vitepress'
     <img src="/logo.png" alt="" class="nav-logo" width="32" height="32" />
     <span class="nav-text">
       <span class="nav-brand">Eintrittli</span>
-      <span class="nav-subtitle">von WebOrb</span>
+      <span class="nav-subtitle">von Milz Informatik</span>
     </span>
   </a>
 </template>
