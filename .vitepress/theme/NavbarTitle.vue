@@ -1,15 +1,14 @@
 <script setup lang="ts">
+import { withBase } from 'vitepress'
 </script>
 
 <template>
-  <a href="/" class="custom-nav-title">
-    <div class="nav-logo">
-      <img src="/logo.png" alt="Logo" />
-    </div>
-    <div class="nav-text">
+  <a :href="withBase('/')" class="custom-nav-title" aria-label="Eintrittli – Startseite">
+    <img src="/logo.png" alt="" class="nav-logo" width="32" height="32" />
+    <span class="nav-text">
       <span class="nav-brand">Eintrittli</span>
       <span class="nav-subtitle">von WebOrb</span>
-    </div>
+    </span>
   </a>
 </template>
 
@@ -17,8 +16,8 @@
 .custom-nav-title {
   display: flex;
   align-items: center;
-  text-decoration: none;
   gap: 10px;
+  text-decoration: none;
 }
 
 .nav-logo {
@@ -35,16 +34,17 @@
 }
 
 .nav-brand {
-  font-family: 'Mona Sans Expanded', var(--vp-font-family-base);
-  font-size: 1.1rem;
+  font-family: var(--et-font-display);
+  font-size: 1.05rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--vp-c-text-1);
 }
 
 .nav-subtitle {
-  font-size: 9px;
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 500;
   color: var(--vp-c-text-3);
-  font-weight: 400;
-  margin-top: 2px;
 }
 </style>

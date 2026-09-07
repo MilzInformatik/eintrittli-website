@@ -1,5 +1,6 @@
 /**
- * Custom Font
+ * Eintrittli – theme overrides for the VitePress default theme
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
  * -------------------------------------------------------------------------- */
 
 @font-face {
@@ -10,83 +11,23 @@
   font-display: swap;
 }
 
-/**
- * Customize default theme styling by overriding CSS variables:
- * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
- */
-
-/**
- * Colors
- *
- * Each colors have exact same color scale system with 3 levels of solid
- * colors with different brightness, and 1 soft color.
- *
- * - `XXX-1`: The most solid color used mainly for colored text. It must
- *   satisfy the contrast ratio against when used on top of `XXX-soft`.
- *
- * - `XXX-2`: The color used mainly for hover state of the button.
- *
- * - `XXX-3`: The color for solid background, such as bg color of the button.
- *   It must satisfy the contrast ratio with pure white (#ffffff) text on
- *   top of it.
- *
- * - `XXX-soft`: The color used for subtle background such as custom container
- *   or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
- *   on top of it.
- *
- *   The soft color must be semi transparent alpha channel. This is crucial
- *   because it allows adding multiple "soft" colors on top of each other
- *   to create a accent, such as when having inline code block inside
- *   custom containers.
- *
- * - `default`: The color used purely for subtle indication without any
- *   special meanings attached to it such as bg color for menu hover state.
- *
- * - `brand`: Used for primary brand colors, such as link text, button with
- *   brand theme, etc.
- *
- * - `tip`: Used to indicate useful information. The default theme uses the
- *   brand color for this by default.
- *
- * - `warning`: Used to indicate warning to the users. Used in custom
- *   container, badges, etc.
- *
- * - `danger`: Used to show error, or dangerous message to the users. Used
- *   in custom container, badges, etc.
- * -------------------------------------------------------------------------- */
+/* ---- Tokens ---------------------------------------------------------- */
 
 :root {
-  --vp-c-default-1: var(--vp-c-gray-1);
-  --vp-c-default-2: var(--vp-c-gray-2);
-  --vp-c-default-3: var(--vp-c-gray-3);
-  --vp-c-default-soft: var(--vp-c-gray-soft);
+  --et-font-display: 'Mona Sans Expanded', var(--vp-font-family-base);
+  --et-c-border: #E3EAF3;
+  --et-c-band: #F6F9FD;
 
   --vp-c-brand-1: #257DEC;
-  --vp-c-brand-2: #257DEC;
+  --vp-c-brand-2: #1F6FD3;
   --vp-c-brand-3: #257DEC;
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  --vp-c-brand-soft: rgba(37, 125, 236, 0.12);
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
   --vp-c-tip-3: var(--vp-c-brand-3);
   --vp-c-tip-soft: var(--vp-c-brand-soft);
 
-  --vp-c-warning-1: var(--vp-c-yellow-1);
-  --vp-c-warning-2: var(--vp-c-yellow-2);
-  --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
-
-  --vp-c-danger-1: var(--vp-c-red-1);
-  --vp-c-danger-2: var(--vp-c-red-2);
-  --vp-c-danger-3: var(--vp-c-red-3);
-  --vp-c-danger-soft: var(--vp-c-red-soft);
-}
-
-/**
- * Component: Button
- * -------------------------------------------------------------------------- */
-
-:root {
   --vp-button-brand-border: transparent;
   --vp-button-brand-text: var(--vp-c-white);
   --vp-button-brand-bg: var(--vp-c-brand-3);
@@ -95,56 +36,162 @@
   --vp-button-brand-hover-bg: var(--vp-c-brand-2);
   --vp-button-brand-active-border: transparent;
   --vp-button-brand-active-text: var(--vp-c-white);
-  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  --vp-button-brand-active-bg: var(--vp-c-brand-2);
+
+  --vp-layout-max-width: 1440px;
 }
 
-/**
- * Component: Home
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-home-hero-name-color: #257DEC;
-  --vp-home-hero-name-background: -webkit-linear-gradient(
-    120deg,
-    #bd34fe 30%,
-    #fff
-  );
-
-  --vp-home-hero-image-background-image: linear-gradient(
-    -45deg,
-    #bd34fe 50%,
-    #47caff 50%
-  );
-  --vp-home-hero-image-filter: blur(44px);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
+/* ---- Shared building blocks (used across the home components) ------- */
+
+.et-container {
+  margin: 0 auto;
+  max-width: 1152px;
 }
 
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
+.et-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--vp-c-brand-soft);
+  color: #0A55B5;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
 }
 
-/**
- * Component: Custom Block
- * -------------------------------------------------------------------------- */
-
-:root {
-  --vp-custom-block-tip-border: transparent;
-  --vp-custom-block-tip-text: var(--vp-c-text-1);
-  --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
-  --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+.et-section-title {
+  margin: 16px 0 0;
+  font-family: var(--et-font-display);
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--vp-c-text-1);
 }
 
-/**
- * Component: Algolia
- * -------------------------------------------------------------------------- */
+.et-section-subtitle {
+  margin: 14px auto 0;
+  max-width: 560px;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
+}
 
-.DocSearch {
-  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+.et-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.et-btn:hover {
+  transform: translateY(-1px);
+}
+
+.et-btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #1F6FD3, #257DEC);
+  box-shadow: 0 8px 20px -6px rgba(37, 125, 236, 0.55);
+}
+
+.et-btn-primary:hover {
+  box-shadow: 0 12px 26px -6px rgba(37, 125, 236, 0.6);
+}
+
+.et-btn-secondary {
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+  border: 1px solid var(--et-c-border);
+}
+
+.et-btn-secondary:hover {
+  border-color: #C9D6E6;
+  background: var(--et-c-band);
+}
+
+.et-btn-light {
+  color: #0A55B5;
+  background: #fff;
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.35);
+}
+
+.et-btn-light:hover {
+  background: #F3F8FF;
+}
+
+/* ---- Navbar ---------------------------------------------------------- */
+
+.VPNavBar:not(.home) {
+  border-bottom-color: var(--et-c-border);
+}
+
+/* ---- Feature cards (default theme, restyled) ------------------------ */
+
+.VPHome .VPFeatures {
+  padding-top: 0;
+}
+
+.VPHome .VPFeatures .VPFeature {
+  border: 1px solid var(--et-c-border);
+  border-radius: 16px;
+  background-color: var(--vp-c-bg);
+  box-shadow: 0 1px 2px rgba(15, 40, 80, 0.04);
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+.VPHome .VPFeatures .VPFeature:hover {
+  border-color: rgba(37, 125, 236, 0.45);
+  box-shadow: 0 16px 40px -20px rgba(37, 125, 236, 0.35);
+  transform: translateY(-3px);
+}
+
+.VPHome .VPFeatures .VPFeature .box {
+  padding: 28px;
+}
+
+.VPHome .VPFeatures .VPFeature .icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  font-size: 26px;
+  background: linear-gradient(135deg, #EAF2FE, #DCE9FC);
+}
+
+.VPHome .VPFeatures .VPFeature .title {
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.VPHome .VPFeatures .VPFeature .details {
+  padding-top: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ---- Footer ---------------------------------------------------------- */
+
+.VPHome {
+  margin-bottom: 96px;
+}
+
+.VPFooter {
+  border-top-color: var(--et-c-border);
 }
