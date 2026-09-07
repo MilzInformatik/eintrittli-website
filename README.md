@@ -1,4 +1,4 @@
-# eintrittli-website
+# eintrittli.ch
 
 Landing page for [Eintrittli](https://github.com/weborb-ch/eintrittli), built with [VitePress](https://vitepress.dev).
 
