@@ -38,7 +38,7 @@ export default defineConfig({
     ],
 
     footer: {
-      message: 'Open Source unter MIT Lizenz',
+      message: `Open Source unter MIT Lizenz · <a href="${base}impressum">Impressum</a> · <a href="${base}datenschutz">Datenschutz</a>`,
       copyright: '© 2026 WebOrb'
     }
   }
