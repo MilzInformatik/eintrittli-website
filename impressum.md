@@ -43,13 +43,7 @@ Die Software Eintrittli selbst ist Open Source und wird unter der [MIT-Lizenz](h
 
 ## Datenschutz
 
-Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf der Seiten werden durch den Hosting-Anbieter technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt des Zugriffs, aufgerufene Seite, Browsertyp) in Server-Logdateien verarbeitet. Weitere Informationen finden sich in der [Datenschutzerklärung von GitHub](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement).
-
-Diese Website setzt keine Cookies zu Analyse- oder Werbezwecken ein und verwendet keine Tracking-Tools.
-
-Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben ausschliesslich zur Bearbeitung der Anfrage verwendet und nicht ohne Ihre Einwilligung an Dritte weitergegeben.
-
-Gestützt auf Artikel 13 der Schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes (Datenschutzgesetz, DSG) hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Wir halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weitergegeben.
+Informationen zur Bearbeitung von Personendaten beim Besuch dieser Website finden Sie in unserer [Datenschutzerklärung](/datenschutz).
 
 ## Anwendbares Recht
 
